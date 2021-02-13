@@ -75,10 +75,15 @@ h3 {
 	.content {
 		margin-left: 16px!important;
 		margin-right: 16px!important;
+		margin-top: 16px!important;
 		grid-gap: 16px!important;
 	}
 	.content > article img {
 	height: 35vw !important;
+	}
+
+	article {
+		padding-bottom:8px!important;
 	}
 }
 
