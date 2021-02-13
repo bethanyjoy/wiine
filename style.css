@@ -73,7 +73,9 @@ h3 {
     display:none!important;
   }
 	.content {
-		margin-left: 32px!important;
+		margin-left: 16px!important;
+		margin-left: 16px!important;
+		grid-gap: 16px;
 	}
 	.content > article img {
 	height: 35vw !important;
