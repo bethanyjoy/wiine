@@ -85,7 +85,10 @@ h3 {
     display:none!important;
   }
 	.content {
-		margin-left: 32px!important;
+		margin-left: 16px!important;
+		margin-left: 16px!important;
+		grid-gap: 16px;
+
 	}
 	.content > article img {
 	height: 35vw !important;
@@ -99,7 +102,9 @@ h3 {
 		display:none!important;
 	}
 	.content {
-		margin-left: 32px!important;
+		margin-left: 16px!important;
+		margin-left: 16px!important;
+		grid-gap: 16px;
 	}
 	.content > article img {
 	height: 35vw !important;
@@ -151,7 +156,7 @@ grid-gap: 40px;
 align-items: stretch;
 width: auto;
 margin-left: 300px;
-padding-right: 40px;
+margin-right: 40px;
 margin-top:32px;
 margin-bottom:32px;
 }
