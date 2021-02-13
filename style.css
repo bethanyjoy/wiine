@@ -80,6 +80,18 @@ h3 {
 	}
 }
 
+@media only screen and (max-devide-width: 400px) and (-webkit-device-pixel-ratio: 3){
+  .sidebar {
+    display:none!important;
+  }
+	.content {
+		margin-left: 32px!important;
+	}
+	.content > article img {
+	height: 35vw !important;
+	}
+}
+
 @media only screen and (device-width: 375px)
     and (device-height: 812px)
     and (-webkit-device-pixel-ratio: 3){
