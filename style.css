@@ -123,9 +123,6 @@ h3 {
 		width: calc(100% - 32px) !important;
 	}
 
-	.content > .search-wrapper {
-		display:none!important;
-	}
 
 	.mobile-nav {
 		height: 64px!important;
