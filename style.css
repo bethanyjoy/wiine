@@ -75,7 +75,7 @@ h3 {
 	.content {
 		margin-left: 16px!important;
 		margin-left: 16px!important;
-		grid-gap: 16px;
+		grid-gap: 16px!important;
 	}
 	.content > article img {
 	height: 35vw !important;
@@ -89,7 +89,7 @@ h3 {
 	.content {
 		margin-left: 16px!important;
 		margin-left: 16px!important;
-		grid-gap: 16px;
+		grid-gap: 16px!important;
 
 	}
 	.content > article img {
@@ -106,7 +106,7 @@ h3 {
 	.content {
 		margin-left: 16px!important;
 		margin-left: 16px!important;
-		grid-gap: 16px;
+		grid-gap: 16px!important;
 	}
 	.content > article img {
 	height: 35vw !important;
