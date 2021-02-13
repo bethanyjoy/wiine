@@ -77,6 +77,7 @@ h3 {
 		margin-right: 16px!important;
 		margin-top: 16px!important;
 		grid-gap: 16px!important;
+		margin-bottom: 32px!important;
 	}
 	.content > article img {
 	height: 35vw !important;
@@ -84,6 +85,7 @@ h3 {
 
 	article {
 		padding-bottom:8px!important;
+		margin-bottom:0px!important;
 	}
 }
 
@@ -96,6 +98,7 @@ h3 {
 		margin-right: 16px!important;
 		margin-top: 16px!important;
 		grid-gap: 16px!important;
+		margin-bottom: 32px!important;
 	}
 	.content > article img {
 	height: 35vw !important;
@@ -103,6 +106,7 @@ h3 {
 
 	article {
 		padding-bottom:8px!important;
+		margin-bottom:0px!important;
 	}
 }
 
@@ -117,6 +121,7 @@ h3 {
 				margin-right: 16px!important;
 				margin-top: 16px!important;
 				grid-gap: 16px!important;
+				margin-bottom: 32px!important;
 			}
 			.content > article img {
 			height: 35vw !important;
@@ -124,12 +129,13 @@ h3 {
 
 			article {
 				padding-bottom:8px!important;
+				margin-bottom:0px!important;
 			}
 }
 
 .sidebar {
 	height: 100%;
-  width: 220px;
+  width: 200px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -174,10 +180,11 @@ width: auto;
 margin-left: 300px;
 margin-right: 40px;
 margin-top:32px;
-margin-bottom:32px;
+margin-bottom:61px;
 }
 .content > article {
 	cursor:pointer;
+	margin-bottom:-8px;
 }
 .content > article img {
 max-width: 100%;
