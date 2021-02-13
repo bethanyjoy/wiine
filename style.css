@@ -68,6 +68,18 @@ h3 {
 	padding-bottom:12px;
 }
 
+@media only screen and (max-width: 800px) {
+  .sidebar {
+    display:none!important;
+  }
+	.content {
+		margin-left: 32px!important;
+	}
+	.content > article img {
+	height: 35vw !important;
+	}
+}
+
 .sidebar {
 	height: 100%;
   width: 220px;
@@ -123,6 +135,9 @@ margin-bottom:32px;
 .content > article img {
 max-width: 100%;
 border-radius:8px;
+width: 100%;
+height: 20vw;
+object-fit: cover;
 }
 
 .content img:hover {
@@ -214,6 +229,10 @@ border-radius:8px;
 
 .sparkling:hover {
   background:rgba(221,215,202,0.5);
+}
+
+a {
+		color: rgba(0,0,0,0.85);
 }
 
 a:visited {
