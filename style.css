@@ -102,12 +102,12 @@ h3 {
 		margin-right: 16px!important;
 		margin-bottom: 32px!important;
 	}
-	.grid {
+	#grid {
 		margin-top: 64px!important;
 		grid-gap: 16px!important;
 	}
 
-	.grid > article img {
+	#grid > article img {
 	height: 40vw !important;
 	}
 
@@ -269,7 +269,7 @@ article {
 	margin-bottom:61px;
 }
 
-.grid {
+#grid {
 	display: grid;
 grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 grid-gap: 40px;
@@ -277,10 +277,10 @@ align-items: stretch;
 width: auto;
 }
 
-.grid > article {
+#grid > article {
 	margin-bottom:-8px;
 }
-.grid > article img {
+#grid > article img {
 max-width: 100%;
 border-radius:8px;
 width: 100%;
@@ -292,7 +292,7 @@ a img {
 	cursor:pointer;
 }
 
-.grid img:hover {
+#grid img:hover {
 	box-shadow:0px 3px 8px 0 rgba(0,0,0,0.1);
 }
 
@@ -496,7 +496,7 @@ a:visited {
 	margin-bottom:32px;
 }
 
-.search {
+#search {
   border: none;
   border-radius: 100px;
   width: 100%;

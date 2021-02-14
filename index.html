@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
 
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
   <title>Wiine</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
@@ -15,6 +17,74 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
+
+  <script>
+
+  const clearIcon = document.querySelector(".clear-icon");
+  const searchBar = document.querySelector("#search");
+
+  searchBar.addEventListener("keyup", () => {
+    if(searchBar.value && clearIcon.style.visibility != "visible"){
+      clearIcon.style.visibility = "visible";
+    } else if(!searchBar.value) {
+      clearIcon.style.visibility = "hidden";
+    }
+  });
+
+  clearIcon.addEventListener("click", () => {
+    searchBar.value = "";
+    clearIcon.style.visibility = "hidden";
+  })
+
+  </script>
+
+  <script>
+
+      $(function() {
+
+
+     var wine = [];
+
+     $.getJSON('wine.json', function(data) {
+         $.each(data.wine, function(i, f) {
+            var tblRow =
+            "<article>" +
+              "<a target='_blank' href=" + f.Link + ">" +
+                "<img src=" + f.Image + ">" +
+              "</a>" +
+              "<div class='tag orange'>" + f.Type + "</div>" +
+              "<div class='text'>" +
+                "<p class='title'>" + f.Name + "</p>" +
+                "<p class='store'>" + f.Store + "</p>"+
+                "<p class='price'>" + f.Price + "</p>" +
+              "</div>" +
+            "</article>"
+             $(tblRow).appendTo("#grid");
+       });
+
+     });
+
+  });
+  </script>
+
+  <script>
+  function myFunction() {
+      var input, filter, div, article, p, i, txtValue;
+      input = document.getElementById("search");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("grid");
+      article = div.getElementsByTagName("article");
+      for (i = 0; i < article.length; i++) {
+          p = article[i].getElementsByTagName("p")[0];
+          txtValue = p.textContent || p.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              article[i].style.display = "";
+          } else {
+              article[i].style.display = "none";
+          }
+      }
+  }
+  </script>
 
 </head>
 
@@ -71,13 +141,11 @@
     <div class="mobile-nav">
     <div class="search-wrapper">
         <img class="search-icon" src="images/search.svg" />
-        <input placeholder="Search"
-               type="text"
-               class="search">
+        <input placeholder="Search" type="text" onkeyup="myFunction()" id="search">
         <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
 </div>
 </div>
-<div class="grid">
+<div id="grid">
   <article>
     <a href="https://silverlakewine.ecwid.com/Lost-Moon-Red-Glow-p294332003" target="_blank"><img src="images/lost-moon.png"></a>
     <div class="tag red">Red</div>
@@ -133,29 +201,6 @@
 </div>
 </article>
 </div>
-
-
-  <script src="js/scripts.js"></script>
-
-  <script>
-
-  const clearIcon = document.querySelector(".clear-icon");
-  const searchBar = document.querySelector(".search");
-
-  searchBar.addEventListener("keyup", () => {
-    if(searchBar.value && clearIcon.style.visibility != "visible"){
-      clearIcon.style.visibility = "visible";
-    } else if(!searchBar.value) {
-      clearIcon.style.visibility = "hidden";
-    }
-  });
-
-  clearIcon.addEventListener("click", () => {
-    searchBar.value = "";
-    clearIcon.style.visibility = "hidden";
-  })
-
-  </script>
 
 </body>
 </html>
