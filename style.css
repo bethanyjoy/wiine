@@ -224,7 +224,7 @@ article {
 
 .sidebar {
 	height: 100%;
-  width: 200px;
+  width: 212px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -263,7 +263,7 @@ article {
 
 .content {
 	width: auto;
-	margin-left: 300px;
+	margin-left: 312px;
 	margin-right: 40px;
 	margin-top:32px;
 	margin-bottom:61px;
